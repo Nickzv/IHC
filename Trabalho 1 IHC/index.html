@@ -19,28 +19,6 @@
 	<link rel="stylesheet" href="css/chosen.css">
 	<link rel="stylesheet" href="css/tab_linhas.css">
 	<link rel="stylesheet" href="css/tab_linhas_ie.css">
-	<!--[if (lt IE 9) & (!IEMobile)]>
-<script src="js/libs/selectivizr-min.js"></script>
-<![endif]-->
-
-	<!-- JavaScript -->
-	<script src="js/libs/modernizr-2.0.6.min.js"></script>
-
-	<!-- For iPhone 4 -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
-	<!-- For iPad 1-->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
-	<!-- For iPhone 3G, iPod Touch and Android -->
-	<link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
-	<!-- For Nokia -->
-	<link rel="shortcut icon" href="img/l/apple-touch-icon.png">
-	<!-- For everything else -->
-	<link rel="shortcut icon" href="/favicon.ico">
-
-	<!--iOS. Delete if not required -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<link rel="apple-touch-startup-image" href="img/splash.png">
 
 	<!--Microsoft. Delete if not required -->
 	<meta http-equiv="cleartype" content="on">
@@ -63,18 +41,13 @@
 	<script src="js/chosen.jquery.js"></script>
 	<div id='conteudo'>
 		<header>
-			<div id='telefones'> <span id='ouvidoria'>Ouvidoria 0800 7782345<br />
-					<b>Atendimento 17 3353-8322<br />
-						De Segunda a Sexta-feira das 8 às 18 horas.</b></span>
-				<br />
-				<!-- <font color="red">O Sistema de Telefonia do Consórcio Riopretrans<br /> está passando por manutenção e está <br />temporariamente inoperante, para atendimento <br />ligar nos telefones: 3234-1567 ou 99156-0133 </font> -->
-			</div>
+		
 			<img id='logo' src='img/logo.png' title='Consórcio RioPretrans' alt='Consórcio RioPretrans' />
 		</header><div role="banner" class="clearfix">
         <nav id="access" role="navigation"> 
                 <ul class="main-menu sf-menu clearfix">
                     <li style="width:16%; margin-left:1%"><a href="#" >Home</a></li>
-                    <li><a href="#" >Sistema de Transporte</a>
+                    <li><a href="#" >Sistema</a>
 			<ul class="sub-menu">
                            	<li><a href="terminal">Terminal Urbano</a></li>
 				<!-- <li><a href="linhas">Linhas</a></li> -->
@@ -103,12 +76,12 @@
 				<li><a href="informativo">Informativo</a></li>
                         </ul>
 		    </li>
-		    <li><a href="#" >Central de Atendimento</a>
+		    <li><a href="#" >Fale Conosco</a>
 			<ul class="sub-menu">
                 <li><a href="duvidas_frequentes">Dúvidas Frequentes</a></li>
                 <li><a href="duvidas_fenix">Dúvidas Sistema VT</a></li>
                                 <!-- <li><a href="https://www.facebook.com/Riopretrans" target="_blank">Facebook</a></li> -->
-				<li><a href="fale_conosco">Fale Conosco</a></li>
+				<li><a href="fale_conosco">Atendimento</a></li>
                         </ul>
 		    </li>
                 </ul>            
@@ -356,6 +329,44 @@
 
 </div>
 
+
+<style>
+	section.termos-politica {
+		display: flex ;
+		justify-content: center ;
+		align-items: center ;
+		position: fixed ;
+		bottom: 0 ;
+		width: 100% ;
+		text-align: center ;
+		background: #1f4f66 ;
+		padding: 5px 20px ;
+		line-height: 24px ;
+		font-family: sans-serif ;
+		font-size: 10px ;
+		color: #ffffff ;
+		box-shadow: 0 5px 12px 14px rgba(0, 0, 0, .06) ;
+		z-index: 999 ;
+	}
+
+	.termos-politica-acoes {
+		margin-left: 40px ;
+		display: flex ;
+		flex-direction: column ;
+	}
+
+	.termos-politica-acoes span.aceitar-termos-politica {
+		margin: 5px 0 ;
+		padding: 5px 30px ;
+		border-radius: 6px ;
+		color: #ffffff ;
+		font-size: 12px ;
+		cursor: pointer ;
+		border: 1px solid ;
+	}
+</style>
+
+
 <section class="termos-politica" style="display:none;">
 	<p>Utilizamos cookies para fornecer uma melhor experiência para nossos usuários. Para saber mais sobre o uso de cookies, <br>consulte nossa <a href="http://www.riopretrans.com.br/politica_privacidade" target="_blank">política de privacidade</a>. Ao continuar navegando em nosso site, você concorda com a nossa política.</p>
 	<div class="termos-politica-acoes">
@@ -363,6 +374,111 @@
 	</div>
 </section>
 
+<script>
+	// You can also use "$(window).load(function() {"
+
+	function createCookie(name, value, days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+			var expires = "; expires=" + date.toGMTString();
+		} else var expires = "";
+
+		document.cookie = name + "=" + value + expires + "; path=/";
+	}
+
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+		}
+		return null;
+	}
+
+	function eraseCookie(name) {
+		createCookie(name, "", -1);
+	}
+
+	$(function() {
+		$(".termos-politica").hide();
+		// eraseCookie("notice-riopretrans");
+		console.log(readCookie("notice-riopretrans"));
+		if (readCookie("notice-riopretrans")==null) {
+			$(".termos-politica").show();
+		}
+
+		$(".aceitar-termos-politica").on('click', function() {
+			createCookie("notice-riopretrans",1,300);
+			$(".termos-politica").hide();
+
+		});
+
+		// Slideshow 4
+		$("#slider4").responsiveSlides({
+			nav: true,
+			speed: 2500,
+			timeout: 11000,
+			namespace: "callbacks",
+			before: function() {
+				$('.events').append("<li>before event fired.</li>");
+			},
+			after: function() {
+				$('.events').append("<li>after event fired.</li>");
+			}
+		});
+
+		$(".chosen").chosen({
+			width: '380px',
+		});
+
+		$(".chosenint").chosen({
+			width: '600px',
+		});
+
+		$("#slcLinhas").change(function(e) {
+			var codigo = $(this).val();
+			if (codigo != '') {
+				location.href = 'http://www.riopretrans.com.br/horarios/' + codigo;
+			}
+		});
+
+		$("#bt_form_contato").click(function() {
+			if ($("#nome").val() != '' && $("#email").val() != "" && $("#fone").val() != "" && $("#assunto").val() != "" && $("#msg").val() != "") {
+				if (!confirm("Deseja enviar os dados do formulário?")) {
+					return false;
+				}
+			}
+		});
+
+	});
+
+	function abrirgre() {
+		window.open('http://ww01.rptrans.com.br/div/vto.htm?1', 'jav', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=758, HEIGHT=628');
+	}
+
+	function abrirmsg() {
+		window.open('msg.php', 'jav', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');
+	}
+</script>
+<script>
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-55377248-1', 'auto');
+	ga('send', 'pageview');
+</script>
 </body>
 
 </html>

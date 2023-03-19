@@ -1,0 +1,124 @@
+#conteudo {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#slciti {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px #555 dashed;
+}
+
+.itinerarios {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.periodo {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #4F76A3;
+    margin: 0;
+    background: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.hor_p {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #4F76A3;
+    margin: 0;
+    background: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.periodo_rptrans {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #4F76A3;
+    margin: 0;
+    background: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.lista-hor {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.lista-hor {
+    display: block;
+}
+
+.lista-hor ul {
+    position: relative;
+    list-style: none outside none;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.lista-hor ul li {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #D4E0EE;
+    border-collapse: collapse;
+    padding: 1px 2px;
+    margin: 2px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 13.5px;
+    color: #555;
+}
+
+.barra {
+    background-color: #fdb813;
+    height: 7px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    /* IE10+ specific styles go here */
+    .horario {
+        border: 1px solid #D4E0EE;
+        border-collapse: collapse;
+        padding: 1px 2px;
+        margin: 0 1px;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13.7px;
+        color: #555;
+    }
+    .horario_rptrans {
+        border: 1px solid #D4E0EE;
+        border-collapse: collapse;
+        padding: 1px 2px;
+        margin: 0 1px;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13.7px;
+        color: #555;
+    }
+    .hrrp {
+        border: 1px solid #D4E0EE;
+        border-collapse: collapse;
+        padding: 1px 2px;
+        margin: 0 1px;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 13.7px;
+        color: #555;
+    }
+}

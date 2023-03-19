@@ -1,0 +1,292 @@
+.clearfix { zoom:1; }
+.clearfix:before, .clearfix:after {
+	content:"\0020";
+	display:block;
+	height:0;
+	overflow:hidden;
+}
+.clearfix:after { clear:both; }
+#menu {margin: 0; padding: 0; }
+
+@media print {
+* {
+	background:transparent !important;
+	color:black !important;
+	text-shadow:none !important;
+	filter:none !important;
+	-ms-filter:none !important;
+}
+@page {
+margin:0.5cm;
+}
+h2, h3 {
+	orphans:3;
+	widows:3;
+	page-break-after:avoid;
+}
+p {
+	orphans:3;
+	widows:3;
+}
+pre, blockquote {
+	border:1px solid #808080;
+	page-break-inside:avoid;
+}
+abbr[title]:after { content:" (" attr(title) ")"; }
+a, a:visited {
+	color:#000000 !important;
+	text-decoration:underline;
+}
+a[href]:after { content:" (" attr(href) ")"; }
+a[href^="javascript:"]:after, a[href^="#"]:after {
+content:"";
+}
+img {
+	max-width:100% !important;
+	page-break-inside:avoid;
+}
+thead { display:table-header-group; }
+tr { page-break-inside:avoid; }
+.ir a:after { content:""; }
+}
+
+.hasTouch{
+    display: none;
+}
+.touch .hasTouch{
+    display: block;
+}
+
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+#access {    
+    overflow:visible;
+    z-index:100;
+}
+/* style the main menu 8*/
+.main-menu{
+    background: #666;
+    border-top:6px solid #fdb813; 
+}
+/* get rid of padding and margin off all ul's (not sure about using * here, could be better) */
+.main-menu, .main-menu * {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+/* position all dropdowns off screen */
+.main-menu ul {
+    position:absolute;
+    top:-999em;
+}
+/* style the main nav list items */
+.main-menu li {
+    background: #666;    
+    clear: left;
+    float:left;
+    position:relative;
+    width: 100%;
+    
+}
+/* change the main nav list items on hover */ 
+.main-menu li:hover {
+    background-color: #fdb813;
+    visibility:inherit; /* fixes IE7 'sticky bug' */
+}
+/* style all the links */
+.main-menu a {
+    font-size: 1.6em;
+    color: #fff;
+    display:block;
+    padding: 10px 0;
+    text-decoration: none;    
+    width: 100%;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+/* added style for Pufferfish ================================================*/
+.main-menu .hasDrop a{
+    width: 80%;
+}
+/* style the first drop */
+
+/* position first drop */
+/* added style for Superfish =================================================*/
+.sf-menu li:hover ul, .main-menu li.sfHover ul {
+    top:auto; /* match top ul list item height */
+    left: 0;
+    position:relative;
+}
+/* make sure second drop is still off screen */
+ul.main-menu li:hover li ul{
+    position: absolute;
+    top:-999em;
+}
+/* position second drop */
+/* added style for Superfish =================================================*/
+ul.sf-menu li li:hover ul, ul.main-menu li li.sfHover ul{
+    left: 0;
+    top:auto;
+    position:relative;
+}
+/* make sure third drop is still off screen */
+ul.sf-menu li li:hover li ul {
+    position: absolute;
+    top:-999em;
+}
+/* position third drop */
+/* added style for Superfish=============== ==================================*/
+ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul{
+    left: 0;
+    top:auto;
+    position:relative;
+}
+/* added style for Pufferfish ================================================*/
+.main-menu a.menuDrop, .main-menu li.sfHover li a.menuDrop, .main-menu li li.sfHover li a.menuDrop{
+    background-color: #666;
+    background-position: center;
+    display: block;
+    font: 0/0 a;
+    color:transparent;
+    width: 18%;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+.main-menu li.sfHover a.menuDrop, .main-menu li li.sfHover a.menuDrop, .main-menu li li li.sfHover a.menuDrop{
+    background-color: #fdb813;
+    background-position: center;
+}
+.js .main-menu li li{
+    position: relative;
+}
+.sf-sub-indicator{
+    display: none;
+}
+
+@media only screen and (min-width: 480px) {
+    /* added style for Pufferfish ============================================*/
+     .main-menu li a.menuDrop, .main-menu li.sfHover li a.menuDrop, .main-menu li li.sfHover li a.menuDrop{
+        width: 12%;
+     }
+     /* added style for Pufferfish ===========================================*/
+    .main-menu .hasDrop a{
+        width: 86%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    /* set height so content isn't pushed down */
+    #access{
+        float: left;
+        width: 100%;
+    }
+    .main-menu a {
+        font-size: 1.4em;
+    }
+    /* set height so content isn't pushed down add z-index to keep drops above content */
+    .main-menu{
+        z-index: 100;
+    }
+    /* restyle so main links are horizontally aligned */
+    .main-menu li {
+        clear: none;
+        width: 20%; /* this will need to be adjusted for your needs */
+	text-align: center;
+    }
+    /* new style for drop list items */
+    .main-menu li li{
+	background-color: #666;
+        clear: left;
+        width: 100%;
+    }
+    
+    /* reset text indent on all drop a tags and set the width to 100% */
+    .main-menu li li a, .main-menu li li li a, .main-menu li li li li a{
+        width: 100%;
+    }
+    /* reposision and style the first drop */
+    /* added style for Superfish =============================================*/
+    .sf-menu li:hover ul, .main-menu li.sfHover ul{
+        background-color: #fdb813;
+        left: auto;
+        position: absolute;
+        top: -1;
+        width: 100%;
+        z-index: 100;
+    }
+    /* reposision and style the second drop */
+    /* added style for Superfish =============================================*/
+    ul.sf-menu li li:hover ul, ul.main-menu li li.sfHover ul{
+        background-color: #fdb813;
+        position: absolute;
+        top: -1px;
+        left:100%;
+    }
+    /* reposision and style the third drop */
+    /* added style for Superfish =============================================*/
+    ul.sf-menu li li li:hover ul, ul.main-menu li li li.sfHover ul{
+        background-color: #666;
+        position: absolute;
+        top: -1px;
+        left:100%;
+    }
+    /* added style for Pufferfish ============================================*/
+     .main-menu li a.menuDrop, .main-menu li.sfHover li a.menuDrop, .main-menu li li.sfHover li a.menuDrop{
+        width: 30%;
+     }
+     /* added style for Pufferfish ===========================================*/
+    .main-menu .hasDrop a{
+        width: 68%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    header h1{
+    font-size: 30px;
+    }
+    
+    .main-menu a {
+        font-size: 1.5em;
+    }
+    /* added style for Pufferfish ============================================*/
+     .main-menu li a.menuDrop, .main-menu li.sfHover li a.menuDrop, .main-menu li li.sfHover li a.menuDrop{
+        width: 25%;
+     }
+     /* added style for Pufferfish ===========================================*/
+    .main-menu .hasDrop a{
+        width: 75%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    header h1{
+        font-size: 1.6em;
+    }
+
+    /* bigger screen bigger font size and padding */
+    .main-menu a {
+        font-size: 1.6em;
+        padding: 25px 0 5px 0;
+    }
+    /* added style for Superfish =============================================*/
+
+    /* new background image for right drops ==================================*/
+    li li .sf-sub-indicator{
+        background-position: 20px center;
+    }
+    /* added style for Pufferfish ============================================*/
+     .main-menu li a.menuDrop, .main-menu li.sfHover li a.menuDrop, .main-menu li li.sfHover li a.menuDrop{
+        width: 23%;
+        position: absolute;
+     }
+    /* added style for Pufferfish ============================================*/
+    .main-menu .hasDrop a{
+        width: 74%;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+}

@@ -1,33 +1,862 @@
-section.termos-politica {
-    display: flex ;
-    justify-content: center ;
-    align-items: center ;
-    position: fixed ;
-    bottom: 0 ;
-    width: 100% ;
-    text-align: center ;
-    background: #1f4f66 ;
-    padding: 5px 20px ;
-    line-height: 24px ;
-    font-family: sans-serif ;
-    font-size: 10px ;
-    color: #ffffff ;
-    box-shadow: 0 5px 12px 14px rgba(0, 0, 0, .06) ;
-    z-index: 999 ;
+/* regra aplicada em todo lugar */
+
+/*** Font Externa ***/
+@font-face {
+    font-family: 'caviar_dreams';
+    src: url('../font/caviardreams.TTF');
+font-stretch: ultra-expanded;        
+} 
+
+a {
+text-decoration: none;
+color: #666;
+font-size: 0.98em;
 }
 
-.termos-politica-acoes {
-    margin-left: 40px ;
-    display: flex ;
-    flex-direction: column ;
+a:hover{
+text-decoration: underline;    
 }
 
-.termos-politica-acoes span.aceitar-termos-politica {
-    margin: 5px 0 ;
-    padding: 5px 30px ;
-    border-radius: 6px ;
-    color: #ffffff ;
-    font-size: 12px ;
-    cursor: pointer ;
-    border: 1px solid ;
+body {
+background: #e9e9ea;
+font-size: 69%;
+margin: 0;
+padding: 0;
+font-family: 'Josefin Sans', sans-serif;
+}
+
+div {	margin: 0;
+padding: 0;
+}
+
+header{
+max-width: 100%;	
+background-color: #fff;
+padding: 10px;
+}
+
+#conteudo{
+background-color: #fff;
+padding: 0;
+max-width: 100%;
+}
+#logo{
+max-width: 60%;
+float: left;
+z-index:1;
+}
+
+.destaque{
+border: 1px solid #666;
+    border-top: 5px solid #666;
+color: #666;
+width: 30%;
+margin: 1.4%;
+float: left;
+}
+
+.destaque h2{
+font-weight: lighter;
+border-top: 5px solid #666;
+letter-spacing: 0.1em;
+padding-left:2%;
+margin: 0 0 2% 0;
+padding-top: 1%;
+    color: #fff;
+    background-color: #666;
+    text-align: center;
+}
+
+.destaque p{
+font-size: 1.6em;
+margin:0;
+padding:2%;
+}
+
+.destaque2{
+background: #edecec;
+border-top: 5px solid #666;
+color: #666;	
+width: 46%;
+margin: 2%;
+float: left;
+    padding: 2%;
+}
+
+.destaque2 h2{
+font-size: 2em;
+font-weight: lighter;
+letter-spacing: 0.1em;
+font-weight: none;	
+padding-top:1%;
+margin: 0 0 4% 0;
+}
+
+.destaque2 h3{
+font-size: 1.6em;
+font-weight: bold;	
+margin: 0;
+}
+
+.destaque2 p{
+font-size: 1.6em;
+margin:0;	
+}
+
+#hor_iti{
+padding: 10px 0 0 10px;
+background-color: #eee;
+}
+
+
+.destaque2 .link{
+padding: 0 0 3% 0;
+margin: 0;
+width: 100%;
+text-align: right;
+}
+
+.destaque2 .link a{
+font-size: 0.8em;
+color: #666;
+text-decoration: none;
+padding-right: 5%;
+margin: 0;	
+}
+
+.destaque2 .link a:hover{
+text-decoration: underline;
+}
+
+#telefones {text-align: right; color: #333333; float:right; font-size: 1.8em; z-index:2; margin:0; padding:0;}
+#ouvidoria {color:#666;}
+#clean {clear:both;}
+
+
+img {max-width: 100%; border:0; }
+.img_esq {float:left; margin: 0 5px 2px 0;}
+.img_centro{text-align: center; width: 100%;}
+.link_detalhes a{color: #666666;
+             font-size: 1em;
+             margin: 6% 5% 2% 0;
+             padding: 0;
+             text-decoration: none; 
+             float:right;
+             font-weight: bold;
+}
+.link_detalhes a:hover{text-decoration: underline; }
+
+#sombra {clear:both; background: transparent url('../img/sombra_banner.png') no-repeat top center; height:49px; width:100%; }
+
+footer{ 
+background-color: #666;
+color: #fff;
+}
+
+footer .tab{
+
+}
+
+footer .principal{
+padding: 3% 0 1% 1%;
+width:17.6%;
+overflow: hidden;
+float: left;
+
+}
+
+footer .principal h3{
+font-size: 1.2em;
+font-weight: bolder;
+}
+footer .principal ul{
+margin: 0;
+padding: 0 ;
+}
+
+footer .principal ul li{
+display: block;
+margin: 0;
+padding: 0;
+text-align: left;
+}
+
+footer .principal ul li a{
+font-size: 1.1em;
+text-decoration: none;
+line-height:180%;
+color: #fff;
+}
+
+footer .principal ul li a:hover{
+text-decoration: underline;
+}
+
+footer #sociedade{	
+display: block;
+width: 27%;
+float:left;
+margin-left: 1em;
+}
+
+footer #sociedade h3{
+font-size: 1.9em;
+font-weight: lighter;
+letter-spacing: 0.1em;
+margin:0.8em 0;
+text-align: center;
+}
+
+footer #empresa{
+width: 95%;
+height:115px;
+background-image:  url("../img/empresas.png");	
+background-repeat: no-repeat;
+background-size: 100%;	
+}
+
+footer address{
+clear:both;
+text-align: right;
+height: 70px;
+margin: 0;
+padding:0;
+overflow: hidden;
+}
+
+footer address #fones {
+width: 97%;
+float: left;
+border-right-color: #fff;
+border-right-style: solid;
+border-right-width: 1px;
+margin: 0;
+padding-right:2%;
+}
+
+footer address  #redessociais {
+width: 28%;
+float: left;
+margin: 0;
+padding:0;
+text-align: left;
+padding-left:2%;
+overflow: hidden;
+}
+
+footer address #facebook {
+width: 20%;
+height: 6em;
+float: left;
+overflow: hidden;
+background-image: url('../img/facebook.png');
+background-repeat: no-repeat;
+background-size: 85%;
+margin: 0 2% 0 0;
+}
+
+footer address p{
+margin:0;
+padding:0;
+}
+
+footer #copyright{
+background-color: #fdb813;
+text-align: center;
+color: #fff;
+padding: 0.7%;
+font-size: 1.2em;
+
+}
+
+.styled-select {
+width:95%;
+overflow: hidden;
+height: 65px;
+margin-left: 2%;
+}
+
+.styled-select select {
+width: 100%;
+height: 100%;
+border: 0;
+line-height: 1.5;
+-webkit-appearance: none;
+-moz-appearance: none;
+text-indent: 0.01px;
+text-overflow: '';
+appearance: none;
+background: transparent url("../img/select.jpg") no-repeat;
+display: none;
+}
+
+#interna{
+width: 98%;
+padding: 3%;
+font-size: 1.6em;    
+line-height: 1.2em;
+}
+
+#interna h1{
+font-size: 1.2em;
+margin: 2% 0;
+line-height: 1.2em; 
+}
+
+#interna p{    
+font-size: 1em;
+padding: 0;
+}
+
+
+#informativo ul li{
+list-style:none;
+margin: 5px;    
+font-size: 1.2em;
+}
+
+
+#interna .font_1{
+font-size: 0.6em;
+}
+
+#interna a{
+text-decoration: none;
+color: #000;
+}
+
+#interna a:hover{
+text-decoration: underline;    
+}
+
+
+#integra p{    
+font-size: 1.0em;
+line-height: 1.4em;
+line-height: 1.4em;
+padding: 0.5em;
+}
+
+#integra .topo{background:#666; color:#fff; padding:10px 2px; font-weight:bold; height: 30px}
+#integra .branca{background:#fff; }
+#integra .cinza{background:#ccc; }
+
+#integra ul {
+white-space: nowrap;
+font-size: 0.6em; 
+margin:  0;
+padding: 15px 0;
+line-height: 1.1em;
+}
+
+#integra li {
+text-align: left;
+list-style-type: none; 
+overflow-x: auto; 
+float: left;
+}
+
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: 0;
+box-shadow: none;
+outline: none;
+}
+
+.input-set {
+max-width: 600px;
+margin: 0 auto;
+padding: 15px 0 5px;
+}
+
+input[type=text] {
+display: block;
+width: 100%;
+height: 3.2em;
+background: #f3f3f3;
+font-family: 'Josefin Sans', sans-serif;  
+line-height: 1;
+padding: 16px 8px;
+font-size: 15px;
+border-radius: 0;
+-webkit-appearance: none;
+transition: all 0.2s ease-in-out;
+}
+
+input[type=radio] {
+height: 1.2em;
+background: #f3f3f3;
+font-family: 'Josefin Sans', sans-serif;  
+line-height: 1;
+padding: 16px 8px;
+font-size: 15px;
+-webkit-appearance: radio;
+transition: all 0.2s ease-in-out;
+}
+
+select {
+display: block;
+width: 100%;
+height: 3.2em;
+background: #f3f3f3;
+font-family: 'Josefin Sans', sans-serif;  
+line-height: 1;
+padding: 16px 8px;
+font-size: 15px;
+border-radius: 0;
+-webkit-appearance: none;
+transition: all 0.2s ease-in-out;
+}
+
+.css-placeholder input:focus, select:focus{
+background: #eee;    
+}
+.css-placeholder input:valid, select:valid{
+padding: 22px 8px 10px;  
+}
+.css-placeholder .input-set input:first-child, select:first-child {
+border-radius: 4px 4px 0 0;
+}
+.css-placeholder .input-set input:last-child, select:last-child{
+border-radius: 0 0 4px 4px;
+box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+.css-placeholder input + input, select + select {
+border-top: 1px solid #ddd;
+}
+.css-placeholder ::-webkit-input-placeholder, ::-webkit-select-placeholder  {
+color: #EEE;
+position: relative;
+-webkit-transform: translate3d(0, 0, 0);
+transition: all 0.2s ease-in-out;
+}
+.css-placeholder ::-webkit-input-placeholder[style*=hidden], ::-webkit-select-placeholder[style*=hidden] {
+color: #5856D6;
+font-weight: 700;
+font-size: 12px;
+-webkit-transform: translate3d(0, -16px, 0);
+opacity: 1;
+visibility: visible !important;
+}
+
+.label-placeholder fieldset {
+position: relative;
+}
+.label-placeholder fieldset:first-child input, select {
+border-radius: 4px 4px 0 0;
+}
+.label-placeholder fieldset:last-child input, select{
+border-radius: 0 0 4px 4px;
+box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+.label-placeholder fieldset + fieldset {
+border-top: 1px solid #ddd;
+}
+.label-placeholder label {
+position: absolute;
+font-size: 15px;
+font-weight: bold;
+top: 15px;
+left: 8px;
+color: #909090;  
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+transition: all 0.2s ease-in-out;
+}
+.label-placeholder input:valid, select:valid, .label-placeholder input:focus, select:focus {
+padding: 22px 8px 10px;  
+}
+.label-placeholder input:focus, select:focus {
+background: #eee;
+}
+.label-placeholder input:valid + label, select:valid + label, .label-placeholder input:focus + label, .label-placeholder select:focus + label{
+color: #fdb813;
+font-weight: 700;
+font-size: 12px;
+-webkit-transform: translate3d(0, -10px, 0);
+transform: translate3d(0, -10px, 0);
+}
+
+.botao{width: 100px; border-radius: 4px; margin-left:600px;}
+
+
+
+/**************************** aplica somente a partir de 320px *****************************/
+@media screen and (min-width: 150px) {
+#telefones {font-size: 1.0em;}
+header{height: 60px;}
+#logo {	padding-top: 0; width: 80px;}
+
+.small{display:none;}
+
+#sombra{ height:20px;}
+p{
+    font-size: 0.8em; /* 16pixel */
+    line-height: 1.1em; /*24 pixel */
+    padding: 1.1em; /*40 pixels*/
+}
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+.sidebar {
+    width: 100%; /* 300px / 960px */		
+    background-color: red;
+    height: auto;
+}
+#ouvidoria {display:none;}
+
+
+.destaque{		
+    width: 99%;
+    margin: 4%  0 1% 0;
+}
+
+.destaque h2{
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-left:2%;
+    margin: 2% 0;
+            
+}
+
+.destaque p{
+    font-size: 1.4em;
+    padding:2%;
+}
+
+.destaque2{
+    width: 99%;
+    margin: 2%;
+}
+.destaque2 h2{
+    font-size: 1.6em;
+}
+.destaque2 h3{
+    font-size: 1.4em;		
+}
+
+.destaque2 p{
+    font-size: 1.4em;
+    padding:2% 0;
+}
+footer #sociedade{		
+    width: 100%;
+    text-align:center;
+    margin-left: 0;
+}
+
+footer #empresa{
+    margin: 0 auto;
+    width: 70%;
+}
+
+footer address{
+    font-size: 1.4em;
+}
+
+footer address #fones{
+    width: 45%;
+}
+
+footer address #redessociais{
+    width: 45%;		
+}
+}
+
+
+/****************************  aplica somente a partir de 530px *****************************/
+@media screen and (min-width: 530px) {
+header{height: 140px;}
+#logo {	padding-top:20px; width: 180px;}
+#telefones {font-size: 1.5em;}
+.small{display:inline; margin:0; padding:0;}
+
+#sombra {height:49px;}
+p{
+    font-size: 1.2em; /* 16pixel */
+    line-height: 1.3em; /*24 pixel */
+    padding: 1.2em; /*40 pixels*/
+}
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+.sidebar {
+    width: 100%; /* 300px / 960px */
+    background-color: red;
+    height: auto;
+}
+#ouvidoria {display:block;}
+
+
+.destaque h2{
+    font-size: 1.6em;
+    letter-spacing: 0.1em;
+    padding-left:2%;
+    margin: 2% 0;
+}
+
+.destaque{		
+    width: 30%;
+    margin: 1.4%;
+}
+
+.destaque p{
+    font-size: 1.4em;
+    padding:2%;
+}
+
+.destaque2{
+    width: 46%;
+    margin: 2%;
+    float: left;
+}
+footer .principal h3{
+    font-size: 1em;
+}
+footer .principal ul li a{
+    font-size: 1em;
+}
+
+footer #sociedade{		
+    width: 27%;
+    text-align:center;
+    margin-left: 1em;
+}
+
+footer #empresa{
+    margin: 0;
+    width: 95%;
+}
+
+footer address{
+    font-size: 1em;
+}
+
+footer address #fones{
+    width: 97%;
+}
+
+footer address #redessociais{
+    width: 28%;		
+}
+
+
+
+}
+
+/**************************** aplica somente a partir de 1024px *****************************/
+@media screen and (min-width: 1024px) {	 
+header{height: 170px;}
+#logo {padding-top:20px; width: 234px;}
+#telefones {font-size: 1.8em;}
+#ouvidoria {display:block;}
+.small{display:inline;}
+
+#sombra {height:49px;}
+#conteudo{		
+    background-color: #fff;
+    padding: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 2em #666;
+    -webkit-box-shadow: 0px 0px 2em #666;
+    -moz-box-shadow: 0px 0px 2em #666;
+}
+p{
+    font-size: 1.6em; /* 16pixel */
+    line-height: 1.5em; /*24 pixel */
+    padding: 2.5em; /*40 pixels*/
+}
+.wrap {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.destaque{		
+    width: 30%;
+    margin: 1.4%;
+}
+
+.destaque h2{
+    letter-spacing: 0.1em;
+    padding-left:2%;
+    margin: 2% 0;
+}
+
+.destaque p{
+    font-size: 1.6em;
+}
+
+.destaque2 h2{
+    font-size: 2em;
+}
+
+.destaque2 h3{
+    font-size: 1.6em;
+}
+
+.destaque2 p{
+    font-size: 1.6em;
+}
+
+
+footer .principal h3{
+    font-size: 1.3em;
+}
+footer .principal ul li a{
+    font-size: 1.3em;
+}
+footer #sociedade{		
+    width: 27%;
+}
+
+footer #sociedade{		
+    width: 27%;
+    text-align:center;
+    margin-left: 1em;
+}
+
+footer #empresa{
+    margin: 0;
+    width: 95%;
+}
+
+footer address{
+    font-size: 1em;
+}
+
+footer address #fones{
+    width: 97%;
+}
+
+footer address #redessociais{
+    width: 28%;		
+}
+}
+
+
+
+/**************************** BANNERS *******************************/
+#wrapper {
+padding-top: 3px;
+
+}
+
+.events {
+list-style: none;
+}
+
+.rslides {
+margin: 0 auto 40px;
+}
+
+.rslides {
+position: relative;
+list-style: none;
+overflow: hidden;
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+.rslides li {
+-webkit-backface-visibility: hidden;
+position: absolute;
+display: none;
+width: 100%;
+left: 0;
+top: 0;
+}
+
+.rslides li:first-child {
+position: relative;
+display: block;
+float: left;
+}
+
+.rslides img {
+display: block;
+height: auto;
+float: left;
+width: 100%;
+border: 0;
+}
+.callbacks_container {
+position: relative;
+float: left;
+width: 100%;
+}
+
+.callbacks {
+position: relative;
+list-style: none;
+overflow: hidden;
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+.callbacks li {
+position: absolute;
+width: 100%;
+left: 0;
+top: 0;
+}
+
+.callbacks img {
+display: block;
+position: relative;
+z-index: 1;
+height: auto;
+width: 100%;
+border: 0;
+}
+
+.callbacks .caption {
+display: block;
+position: absolute;
+z-index: 2;
+font-size: 20px;
+text-shadow: none;
+color: #fff;
+background: #000;
+background: rgba(0,0,0, .8);
+left: 0;
+right: 0;
+bottom: 0;
+padding: 10px 20px;
+margin: 0;
+max-width: none;
+}
+
+.callbacks_nav {
+position: absolute;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+top: 52%;
+left: 0;
+opacity: 0.7;
+z-index: 3;
+text-indent: -9999px;
+overflow: hidden;
+text-decoration: none;
+height: 61px;
+width: 38px;
+background: transparent url("../themes/themes.gif") no-repeat left top;
+margin-top: -45px;
+}
+
+.callbacks_nav:active {
+opacity: 1.0;
+}
+
+.callbacks_nav.next {
+left: auto;
+background-position: right top;
+right: 0;
 }
